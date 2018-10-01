@@ -55,5 +55,6 @@ web:
 
 =cut
 
+package Bio::Cluster;
 
 1;
