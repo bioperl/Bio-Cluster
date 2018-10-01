@@ -1,7 +1,7 @@
 #
 # BioPerl module for Bio::Cluster::UniGene.pm
 #
-# Please direct questions and support issues to <bioperl-l@bioperl.org> 
+# Please direct questions and support issues to <bioperl-l@bioperl.org>
 #
 # Cared for by Andrew Macgregor <andrew at cbbc.murdoch.edu.au>
 #
@@ -24,7 +24,7 @@ Bio::Cluster::UniGene - UniGene object
 	use Bio::Cluster::UniGene;
 	use Bio::ClusterIO;
 
-	$stream  = Bio::ClusterIO->new('-file' => "Hs.data", 
+	$stream  = Bio::ClusterIO->new('-file' => "Hs.data",
                                        '-format' => "unigene");
 	# note: we quote -format to keep older perl's from complaining.
 
@@ -144,15 +144,15 @@ of the Bioperl mailing lists. Your participation is much appreciated.
   bioperl-l@bioperl.org                  - General discussion
   http://bioperl.org/wiki/Mailing_lists  - About the mailing lists
 
-=head2 Support 
+=head2 Support
 
 Please direct usage questions or support issues to the mailing list:
 
 I<bioperl-l@bioperl.org>
 
-rather than to the module maintainer directly. Many experienced and 
-reponsive experts will be able look at the problem and quickly 
-address it. Please include a thorough description of the problem 
+rather than to the module maintainer directly. Many experienced and
+reponsive experts will be able look at the problem and quickly
+address it. Please include a thorough description of the problem
 with code and data examples if at all possible.
 
 =head2 Reporting Bugs
@@ -183,6 +183,7 @@ methods. Internal methods are usually preceded with a "_".
 
 
 package Bio::Cluster::UniGene;
+
 use strict;
 
 use Bio::Annotation::Collection;
@@ -287,11 +288,11 @@ sub new {
     $self->version($v) if defined($v);
     if( ! defined $seqfact ) {
 	$seqfact = Bio::Seq::SeqFactory->new
-	    (-verbose => $self->verbose(), 
+	    (-verbose => $self->verbose(),
 	     -type => 'Bio::Seq::RichSeq');
     }
     $self->sequence_factory($seqfact);
-    if( (! $species) && (defined $self->unigene_id() && 
+    if( (! $species) && (defined $self->unigene_id() &&
 			 $self->unigene_id() =~ /^([A-Za-z]+)\.[0-9]/)) {
 	# try set a default one depending on the ID
 	$species = $species_map{$1};
@@ -425,7 +426,7 @@ sub mgi {
 
 sub locuslink {
     my ($self,$ll) = @_;
-    
+
     if($ll) {
 	# purge first
 	$self->_remove_dblink('dblink','LocusLink');
@@ -480,7 +481,7 @@ sub restr_expr {
  Title   : gnm_terminus
  Usage   : gnm_terminus();
  Function: Returns the gnm_terminus associated with the object.
- Example : $gnm_terminus = $unigene->gnm_terminus or 
+ Example : $gnm_terminus = $unigene->gnm_terminus or
            $unigene->gnm_terminus($gnm_terminus)
  Returns : A string
  Args    : None or a gnm_terminus
@@ -518,7 +519,7 @@ sub scount {
 
  Title   : express
  Usage   : express();
- Function: Returns or stores a reference to an array containing 
+ Function: Returns or stores a reference to an array containing
            tissue expression data
  Returns : An array reference
  Args    : None or an array reference
@@ -632,9 +633,9 @@ sub sequences {
  Title   : species
  Usage   : $obj->species($newval)
  Function: Get/set the species object for this Unigene cluster.
- Example : 
+ Example :
  Returns : value of species (a L<Bio::Species> object)
- Args    : on set, new value (a L<Bio::Species> object or 
+ Args    : on set, new value (a L<Bio::Species> object or
            the binomial name, or undef, optional)
 
 
@@ -662,7 +663,7 @@ sub species{
 =head2 display_id
 
  Title   : display_id
- Usage   : 
+ Usage   :
  Function: Get/set the display name or identifier for the cluster
 
            This is aliased to unigene_id().
@@ -684,8 +685,8 @@ sub display_id{
 
            This is aliased to title().
 
- Returns : the description string 
- Args    : Optional the description string 
+ Returns : the description string
+ Args    : Optional the description string
 
 =cut
 
@@ -697,13 +698,13 @@ sub description{
 
  Title   : size
  Usage   : Bio::ClusterI->size();
- Function: get for the size of the family, 
+ Function: get for the size of the family,
            calculated from the number of members
 
            This is aliased to scount().
 
  Returns : the size of the cluster
- Args    : 
+ Args    :
 
 =cut
 
@@ -758,7 +759,7 @@ sub cluster_score{
            specifying criteria and will always return all members.
 
  Returns : the array of members
- Args    : 
+ Args    :
 
 =cut
 
@@ -803,9 +804,9 @@ sub get_members {
            annotation collection with another one you should know
            exactly what you are doing.
 
- Example : 
+ Example :
  Returns : a L<Bio::AnnotationCollectionI> compliant object
- Args    : on set, new value (a L<Bio::AnnotationCollectionI> 
+ Args    : on set, new value (a L<Bio::AnnotationCollectionI>
            compliant object or undef, optional)
 
 
@@ -886,7 +887,7 @@ sub remove_members{
 
  Title   : next_locuslink
  Usage   : next_locuslink();
- Function: Returns the next locuslink from an array referred 
+ Function: Returns the next locuslink from an array referred
            to using $obj->{'locuslink'}
 
            If you call this iterator again after it returned undef, it
@@ -912,7 +913,7 @@ sub next_locuslink {
 
  Title   : next_express
  Usage   : next_express();
- Function: Returns the next tissue from an array referred 
+ Function: Returns the next tissue from an array referred
            to using $obj->{'express'}
 
            If you call this iterator again after it returned undef, it
@@ -966,7 +967,7 @@ sub next_chromosome {
 
  Title   : next_protsim
  Usage   : next_protsim();
- Function: Returns the next protsim line from an array referred 
+ Function: Returns the next protsim line from an array referred
            to using $obj->{'protsim'}
 
            If you call this iterator again after it returned undef, it
@@ -993,7 +994,7 @@ sub next_protsim {
 
  Title   : next_sts
  Usage   : next_sts();
- Function: Returns the next sts line from an array referred 
+ Function: Returns the next sts line from an array referred
            to using $obj->{'sts'}
 
            If you call this iterator again after it returned undef, it
@@ -1020,7 +1021,7 @@ sub next_sts {
 
  Title   : next_txmap
  Usage   : next_txmap();
- Function: Returns the next txmap line from an array 
+ Function: Returns the next txmap line from an array
            referred to using $obj->{'txmap'}
 
            If you call this iterator again after it returned undef, it
@@ -1121,7 +1122,7 @@ sub version {
  Title   : authority
  Usage   : $authority    = $obj->authority()
  Function: a string which represents the organisation which
-           granted the namespace, written as the DNS name for  
+           granted the namespace, written as the DNS name for
            organisation (eg, wormbase.org)
 
  Returns : A scalar
@@ -1144,7 +1145,7 @@ sub authority {
  Usage   : $string    = $obj->namespace()
  Function: A string representing the name space this identifier
            is valid in, often the database name or the name
-           describing the collection 
+           describing the collection
 
  Returns : A scalar
  Args    : on set, new value (a scalar or undef, optional)
@@ -1170,7 +1171,7 @@ sub namespace {
  Function: A string which is what should be displayed to the user
            the string should have no spaces (ideally, though a cautious
            user of this interface would not assume this) and should be
-           less than thirty characters (though again, double checking 
+           less than thirty characters (though again, double checking
            this is a good idea)
 
            This is aliased to unigene_id().
@@ -1189,7 +1190,7 @@ sub display_name {
 
  Title   : description
  Usage   : $string    = $obj->description()
- Function: A text string suitable for displaying to the user a 
+ Function: A text string suitable for displaying to the user a
            description. This string is likely to have spaces, but
            should not have any newlines or formatting - just plain
            text. The string should not be greater than 255 characters
@@ -1213,9 +1214,9 @@ sub display_name {
 
  Title   : next_seq
  Usage   : next_seq();
- Function: Returns the next seq as a Seq object as defined by 
-           $seq->sequence_factory(), 
-           at present an empty Bio::Seq::RichSeq object with 
+ Function: Returns the next seq as a Seq object as defined by
+           $seq->sequence_factory(),
+           at present an empty Bio::Seq::RichSeq object with
            just the accession_number() and pid() set
 
            This iterator will not exhaust the array of member
@@ -1290,7 +1291,7 @@ sub next_seq {
 =cut
 
 sub sequence_factory {
-    my ($self,$obj) = @_;   
+    my ($self,$obj) = @_;
     if( defined $obj ) {
 	if( ! ref($obj) || ! $obj->isa('Bio::Factory::SequenceFactoryI') ) {
 	    $self->throw("Must provide a valid Bio::Factory::SequenceFactoryI object to ".ref($self)." sequence_factory()");

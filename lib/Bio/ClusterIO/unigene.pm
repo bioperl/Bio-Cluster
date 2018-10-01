@@ -1,6 +1,6 @@
 # BioPerl module for Bio::ClusterIO::unigene
 #
-# Please direct questions and support issues to <bioperl-l@bioperl.org> 
+# Please direct questions and support issues to <bioperl-l@bioperl.org>
 #
 # Cared for by Andrew Macgregor <andrew at cbbc.murdoch.edu.au>
 #
@@ -40,15 +40,15 @@ of the Bioperl mailing lists.  Your participation is much appreciated.
   bioperl-l@bioperl.org                  - General discussion
   http://bioperl.org/wiki/Mailing_lists  - About the mailing lists
 
-=head2 Support 
+=head2 Support
 
 Please direct usage questions or support issues to the mailing list:
 
 I<bioperl-l@bioperl.org>
 
-rather than to the module maintainer directly. Many experienced and 
-reponsive experts will be able look at the problem and quickly 
-address it. Please include a thorough description of the problem 
+rather than to the module maintainer directly. Many experienced and
+reponsive experts will be able look at the problem and quickly
+address it. Please include a thorough description of the problem
 with code and data examples if at all possible.
 
 =head2 Reporting Bugs
@@ -75,6 +75,7 @@ methods. Internal methods are usually preceded with a _
 # Let the code begin...
 
 package Bio::ClusterIO::unigene;
+
 use strict;
 
 use Bio::Cluster::UniGene;
@@ -137,12 +138,12 @@ sub next_cluster {
 	my( $self) = @_;
 	local $/ = "\n//";
 	return unless my $entry = $self->_readline;
-	
+
 # set up the variables we'll need
 	my (%unigene,@express,@locuslink,@chromosome,
 		@sts,@txmap,@protsim,@sequence);
 	my $UGobj;
-	
+
 # set up the regexes
 
 # add whitespace parsing and precompile regexes
@@ -182,7 +183,7 @@ sub next_cluster {
 		elsif ($line =~ /$line_is{EXPRESS}/gcx) {
 			my $express = $1;
 			# remove initial semicolon if present
-			$express =~ s/^;//; 
+			$express =~ s/^;//;
 			@express = split /\s*;/, $express;
 		}
 		elsif ($line =~ /$line_is{RESTR_EXPR}/gcx) {
@@ -206,11 +207,11 @@ sub next_cluster {
 		elsif ($line =~ /$line_is{SCOUNT}/gcx) {
 			$unigene{SCOUNT} = $1;
 		}
-		elsif ($line =~ /$line_is{SEQUENCE}/gcx) { 
+		elsif ($line =~ /$line_is{SEQUENCE}/gcx) {
 			# parse into each sequence line
 			my $seq = {};
 			# add unigene id to each seq
-			#$seq->{unigene_id} = $unigene{ID}; 
+			#$seq->{unigene_id} = $unigene{ID};
 			my @items = split(/;/, $1);
 			foreach (@items) {
                             if (/$line_is{ACC}/gcx) {
@@ -246,7 +247,7 @@ sub next_cluster {
                                 $seq->{peripheral} = $1;
                             }
 			}
-			push @sequence, $seq;			
+			push @sequence, $seq;
 		}
 		elsif ($line =~ /$line_is{DELIMITER}/gcx) {
 			# at the end of the record, add data to the object
@@ -273,4 +274,3 @@ sub next_cluster {
 }
 
 1;
-

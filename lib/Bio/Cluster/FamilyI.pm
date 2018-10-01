@@ -1,7 +1,7 @@
 #
 # BioPerl module for Bio::Cluster::FamilyI
 #
-# Please direct questions and support issues to <bioperl-l@bioperl.org> 
+# Please direct questions and support issues to <bioperl-l@bioperl.org>
 #
 # Cared for by Shawn Hoon <shawnh@fugu-sg.org>
 #
@@ -26,7 +26,7 @@ Bio::Cluster::FamilyI - Family Interface
 
 =head1 DESCRIPTION
 
-This interface if for a Family object representing a family of 
+This interface if for a Family object representing a family of
 biological objects. A generic implementation for this may be
 found a L<Bio::Cluster::Family>.
 
@@ -42,15 +42,15 @@ the Bioperl mailing list.  Your participation is much appreciated.
   bioperl-l@bioperl.org                  - General discussion
   http://bioperl.org/wiki/Mailing_lists  - About the mailing lists
 
-=head2 Support 
+=head2 Support
 
 Please direct usage questions or support issues to the mailing list:
 
 I<bioperl-l@bioperl.org>
 
-rather than to the module maintainer directly. Many experienced and 
-reponsive experts will be able look at the problem and quickly 
-address it. Please include a thorough description of the problem 
+rather than to the module maintainer directly. Many experienced and
+reponsive experts will be able look at the problem and quickly
+address it. Please include a thorough description of the problem
 with code and data examples if at all possible.
 
 =head2 Reporting Bugs
@@ -74,6 +74,7 @@ Internal methods are usually preceded with a _
 
 
 package Bio::Cluster::FamilyI;
+
 use strict;
 
 
@@ -88,7 +89,7 @@ use base qw(Bio::ClusterI);
  ---------          -----------
  -family_id         the name of the family
  -description       the consensus description of the family
- -annotation_score  the confidence by which the consensus description is 
+ -annotation_score  the confidence by which the consensus description is
                     representative of the family
  -members           the members belonging to the family
  -alignment         the multiple alignment of the members
@@ -100,8 +101,8 @@ use base qw(Bio::ClusterI);
 
  Title   : family_id
  Usage   : Bio::Cluster::FamilyI->family_id("znfp");
- Function: get/set for the family id 
- Returns : the family id 
+ Function: get/set for the family id
+ Returns : the family id
  Args    : the family id
 
 =cut
@@ -133,10 +134,10 @@ sub family_score {
 =head2 display_id
 
  Title   : display_id
- Usage   : 
+ Usage   :
  Function: Get the display name or identifier for the cluster
  Returns : a string
- Args    : 
+ Args    :
 
 =cut
 
@@ -155,7 +156,7 @@ sub family_score {
  Title   : description
  Usage   : Bio::Cluster::FamilyI->description("Zinc Finger Protein");
  Function: get/set for the description of the family
- Returns : the description 
+ Returns : the description
  Args    : the description
 
 =cut
@@ -166,8 +167,8 @@ sub family_score {
  Title   : size
  Usage   : Bio::Cluster::FamilyI->size();
  Function: get/set for the description of the family
- Returns : size 
- Args    : 
+ Returns : size
+ Args    :
 
 =cut
 

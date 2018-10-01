@@ -1,7 +1,7 @@
 #
 # BioPerl module for Bio::Cluster::ClusterFactory
 #
-# Please direct questions and support issues to <bioperl-l@bioperl.org> 
+# Please direct questions and support issues to <bioperl-l@bioperl.org>
 #
 # Cared for by Hilmar Lapp <hlapp at gmx.net>
 #
@@ -17,7 +17,7 @@
 # Refer to the Perl Artistic License (see the license accompanying this
 # software package, or see http://www.perl.com/language/misc/Artistic.html)
 # for the terms under which you may use, modify, and redistribute this module.
-# 
+#
 # THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
 # MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
@@ -54,15 +54,15 @@ the Bioperl mailing list.  Your participation is much appreciated.
   bioperl-l@bioperl.org                  - General discussion
   http://bioperl.org/wiki/Mailing_lists  - About the mailing lists
 
-=head2 Support 
+=head2 Support
 
 Please direct usage questions or support issues to the mailing list:
 
 I<bioperl-l@bioperl.org>
 
-rather than to the module maintainer directly. Many experienced and 
-reponsive experts will be able look at the problem and quickly 
-address it. Please include a thorough description of the problem 
+rather than to the module maintainer directly. Many experienced and
+reponsive experts will be able look at the problem and quickly
+address it. Please include a thorough description of the problem
 with code and data examples if at all possible.
 
 =head2 Reporting Bugs
@@ -90,6 +90,7 @@ Internal methods are usually preceded with a _
 
 
 package Bio::Cluster::ClusterFactory;
+
 use strict;
 
 use Bio::Root::Root;
@@ -100,7 +101,7 @@ use base qw(Bio::Factory::ObjectFactory);
 
  Title   : new
  Usage   : my $obj = Bio::Cluster::ClusterFactory->new();
- Function: Builds a new Bio::Cluster::ClusterFactory object 
+ Function: Builds a new Bio::Cluster::ClusterFactory object
  Returns : Bio::Cluster::ClusterFactory
  Args    : -type => string, name of a ClusterI derived class.
                     If not provided, the factory will have to guess
@@ -133,7 +134,7 @@ sub new {
  Returns : L<Bio::ClusterI> compliant object
            The return type is configurable using new(-type =>"...").
  Args    : initialization parameters specific to the type of cluster
-           object we want.  Typically 
+           object we want.  Typically
            -display_id  => $name
            -description => description of the cluster
            -members     => arrayref, members of the cluster

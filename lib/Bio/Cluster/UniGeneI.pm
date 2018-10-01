@@ -1,7 +1,7 @@
 #
 # BioPerl module for Bio::Cluster::UniGeneI.pm
 #
-# Please direct questions and support issues to <bioperl-l@bioperl.org> 
+# Please direct questions and support issues to <bioperl-l@bioperl.org>
 #
 # Cared for by Andrew Macgregor <andrew at cbbc.murdoch.edu.au>
 #
@@ -50,15 +50,15 @@ of the Bioperl mailing lists. Your participation is much appreciated.
   bioperl-l@bioperl.org                  - General discussion
   http://bioperl.org/wiki/Mailing_lists  - About the mailing lists
 
-=head2 Support 
+=head2 Support
 
 Please direct usage questions or support issues to the mailing list:
 
 I<bioperl-l@bioperl.org>
 
-rather than to the module maintainer directly. Many experienced and 
-reponsive experts will be able look at the problem and quickly 
-address it. Please include a thorough description of the problem 
+rather than to the module maintainer directly. Many experienced and
+reponsive experts will be able look at the problem and quickly
+address it. Please include a thorough description of the problem
 with code and data examples if at all possible.
 
 =head2 Reporting Bugs
@@ -86,6 +86,7 @@ methods. Internal methods are usually preceded with a "_".
 
 
 package Bio::Cluster::UniGeneI;
+
 use strict;
 
 
@@ -374,9 +375,9 @@ sub sequence {
  Title   : species
  Usage   : $obj->species($newval)
  Function: Get the species object for this Unigene cluster.
- Example : 
+ Example :
  Returns : value of species (a L<Bio::Species> object)
- Args    : 
+ Args    :
 
 
 =cut
@@ -392,7 +393,7 @@ sub species{
 =head2 display_id
 
  Title   : display_id
- Usage   : 
+ Usage   :
  Function: Get/set the display name or identifier for the cluster
  Returns : a string
  Args    : optional, on set the display ID ( a string)
@@ -404,8 +405,8 @@ sub species{
  Title   : description
  Usage   : Bio::ClusterI->description("POLYUBIQUITIN")
  Function: get/set for the consensus description of the cluster
- Returns : the description string 
- Args    : Optional the description string 
+ Returns : the description string
+ Args    : Optional the description string
 
 =cut
 
@@ -413,10 +414,10 @@ sub species{
 
  Title   : size
  Usage   : Bio::ClusterI->size();
- Function: get/set for the size of the family, 
+ Function: get/set for the size of the family,
            calculated from the number of members
- Returns : the size of the family 
- Args    : 
+ Returns : the size of the family
+ Args    :
 
 =cut
 
@@ -437,12 +438,12 @@ sub species{
  Usage   : Bio::ClusterI->get_members(($seq1, $seq2));
  Function: retrieve the members of the family by some criteria, for
            example :
-           $cluster->get_members(-species => 'homo sapiens'); 
+           $cluster->get_members(-species => 'homo sapiens');
 
            Will return all members if no criteria are provided.
 
  Returns : the array of members
- Args    : 
+ Args    :
 
 =cut
 

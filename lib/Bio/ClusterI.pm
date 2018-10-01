@@ -1,7 +1,7 @@
 #
 # BioPerl module for Bio::ClusterI
 #
-# Please direct questions and support issues to <bioperl-l@bioperl.org> 
+# Please direct questions and support issues to <bioperl-l@bioperl.org>
 #
 # Cared for by Shawn Hoon <shawnh@fugu-sg.org>
 #
@@ -13,7 +13,7 @@
 
 =head1 NAME
 
-Bio::ClusterI - Cluster Interface 
+Bio::ClusterI - Cluster Interface
 
 =head1 SYNOPSIS
 
@@ -42,15 +42,15 @@ the Bioperl mailing list.  Your participation is much appreciated.
   bioperl-l@bioperl.org                  - General discussion
   http://bioperl.org/wiki/Mailing_lists  - About the mailing lists
 
-=head2 Support 
+=head2 Support
 
 Please direct usage questions or support issues to the mailing list:
 
 I<bioperl-l@bioperl.org>
 
-rather than to the module maintainer directly. Many experienced and 
-reponsive experts will be able look at the problem and quickly 
-address it. Please include a thorough description of the problem 
+rather than to the module maintainer directly. Many experienced and
+reponsive experts will be able look at the problem and quickly
+address it. Please include a thorough description of the problem
 with code and data examples if at all possible.
 
 =head2 Reporting Bugs
@@ -76,6 +76,7 @@ Internal methods are usually preceded with a _
 # Let the code begin...
 
 package Bio::ClusterI;
+
 use strict;
 
 
@@ -102,10 +103,10 @@ define.
 =head2 display_id
 
  Title   : display_id
- Usage   : 
+ Usage   :
  Function: Get the display name or identifier for the cluster
  Returns : a string
- Args    : 
+ Args    :
 
 =cut
 
@@ -119,8 +120,8 @@ sub display_id{
  Title   : description
  Usage   : Bio::ClusterI->description("POLYUBIQUITIN")
  Function: get/set for the consensus description of the cluster
- Returns : the description string 
- Args    : Optional the description string 
+ Returns : the description string
+ Args    : Optional the description string
 
 =cut
 
@@ -132,10 +133,10 @@ sub description{
 
  Title   : size
  Usage   : Bio::ClusterI->size();
- Function: get/set for the size of the family, 
+ Function: get/set for the size of the family,
            calculated from the number of members
- Returns : the size of the family 
- Args    : 
+ Returns : the size of the family
+ Args    :
 
 =cut
 
@@ -164,12 +165,12 @@ sub cluster_score{
  Usage   : Bio::ClusterI->get_members(($seq1, $seq2));
  Function: retrieve the members of the family by some criteria, for
            example :
-           $cluster->get_members(-species => 'homo sapiens'); 
+           $cluster->get_members(-species => 'homo sapiens');
 
            Will return all members if no criteria are provided.
 
  Returns : the array of members
- Args    : 
+ Args    :
 
 =cut
 
